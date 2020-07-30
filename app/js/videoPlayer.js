@@ -1,3 +1,4 @@
+import { addZero } from './supScript.js'
 export const  videoPlayerInit = () => {
     const videoPlayer = document.querySelector('.video-player')
     const videoBtnPlay = document.querySelector('.video-button__play')
@@ -28,8 +29,6 @@ export const  videoPlayerInit = () => {
         videoPlayer.pause()
         videoPlayer.currentTime = 0
     }
-
-    const addZero = n => n < 10 ? '0' + n : n
 
     videoPlayer.addEventListener('click', togglePlay)
     videoBtnPlay.addEventListener('click', togglePlay)
