@@ -36,7 +36,7 @@ export const  musicPlayerInit = () => {
     }
 
     const prevTrack = () => {
-        if (trackIndex !== 0) {
+        if (trackIndex) {
             trackIndex--
         } else {
             trackIndex = playlist.length - 1
@@ -95,4 +95,13 @@ export const  musicPlayerInit = () => {
         const progress = (x / allWidth) * audioPlayer.duration
         audioPlayer.currentTime = progress
     })
+
+    musicPlayerInit.stop = () => {
+        if (!audioPlayer.paused) {
+            audioPlayer.pause()
+            audio.classList.remove('play')
+            audioButtonPlay.classList.remove('fa-pause')
+            audioButtonPlay.classList.add('fa-play')
+        }
+    }
 }
